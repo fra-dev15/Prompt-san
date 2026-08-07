@@ -125,7 +125,8 @@
     </div>
     <ul class="menu-list">
       <li><a href="#" class="menu-item active" data-target="generator-section">📝 プロンプト作成</a></li>
-      <li><a href="#" class="menu-item" data-target="history-section">📜 履歴一覧</a></li>
+      <li><a href="#" class="menu-item" data-target="database-section">🗄️ データ一覧</a></li>
+      <li><a href="#" class="menu-item" data-target="history-section">📜 履歴</a></li>
       <li><a href="#" class="menu-item" data-target="templates-section">📚 テンプレート</a></li>
       <li><a href="#" class="menu-item" data-target="settings-section">⚙️ 設定</a></li>
     </ul>
@@ -160,10 +161,29 @@
         </div>
       </div>
     </section>
+    
+    <section id="database-section" class="content-section" hidden>
+      <h2>データ一覧</h2>
+      <p>現在登録されているデータの一覧です。</p>
+      
+      <div class="table-container">
+        <table id="dataTable">
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>要素名</th>
+            </tr>
+          </thead>
+          <tbody id="dataTableBody">
+            <!-- ここにJSでデータを流し込む -->
+          </tbody>
+        </table>
+      </div>
+    </section>
 
     <!-- ★今後追加する新機能用のセクション（初期状態は hidden）★ -->
     <section id="history-section" class="content-section" hidden>
-      <h2>履歴一覧</h2>
+      <h2>履歴</h2>
       <p>ここに過去のプロンプトを表示します。</p>
     </section>
 
