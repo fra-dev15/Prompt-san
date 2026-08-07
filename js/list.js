@@ -23,11 +23,11 @@ async function fetchAndRenderData() {
         
         // 1列目: 要素名 (prompt_name)
         const tdPromptName = document.createElement('td');
-        tdPromptName.textContent = item.prompt_name;
+        tdPromptName.textContent = item.official_name;
         
         // 2列目: 正式名称 (official_name)
         const tdOfficialName = document.createElement('td');
-        tdOfficialName.textContent = item.official_name || '';
+        tdOfficialName.textContent = item.prompt_name || '';
         
         tr.appendChild(tdPromptName);
         tr.appendChild(tdOfficialName);
