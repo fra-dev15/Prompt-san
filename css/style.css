@@ -260,6 +260,8 @@ button:disabled {
   font-size: 14px;
   border: 1px solid #d1d5db; /* 縦横の格子状に罫線を追加 */
   text-align: left;
+  word-break: break-all;     /* ★どんな文字でも強制的に折り返す */
+  overflow-wrap: break-word; /* ★単語の途中でも綺麗に折り返す */
 }
 
 /* 1列目（正式名称）を 65% に強制固定 */
