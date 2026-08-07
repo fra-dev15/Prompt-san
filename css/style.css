@@ -330,3 +330,19 @@ body.dark-theme #settings-section p {
 body.dark-theme .content-section h2 {
   color: #e0e0e0;
 }
+
+/* サイドバー全体の文字色を白に */
+body.dark-theme .sidebar {
+  color: #f0f0f0;
+}
+
+/* サイドバー内のリンク（メニュー項目）の文字色を白に */
+body.dark-theme .sidebar .menu-list a {
+  color: #f0f0f0;
+}
+
+/* サイドバーのヘッダー（タイトルと閉じるボタン）の文字色も白に */
+body.dark-theme .sidebar-header h2,
+body.dark-theme .sidebar-header .close-btn {
+  color: #f0f0f0;
+}
