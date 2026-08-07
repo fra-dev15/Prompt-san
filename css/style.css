@@ -150,7 +150,8 @@
 }
 
 #dataTable th, #dataTable td {
-  padding: 12px 15px;
+  padding: 6px 12px; /* 上下の余白を狭くする（元は12px 15px） */
+  font-size: 14px;   /* 文字サイズも少し小さくして情報量を増やす */
   border-bottom: 1px solid #eee;
   text-align: left;
 }
