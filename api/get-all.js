@@ -1,9 +1,15 @@
 import { neon } from '@neondatabase/serverless';
 
 export default async function handler(req, res) {
-  // CORSヘッダーの設定（外部からのアクセスを許可）
+  // 最初に必ずCORSヘッダーを設定する
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // プリフライトリクエスト（OPTIONS）への即時応答
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
 
   try {
     // 環境変数からNeonの接続文字列を取得して接続
@@ -22,6 +28,7 @@ export default async function handler(req, res) {
     return res.status(200).json({ success: true, data: items });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ success: false, error: 'Database error' });
+    // エラー時でもCORSヘッダーが落ちないようにしつつ返す
+    return res.status(500).json({ success: false, error: 'Database error: ' + error.message });
   }
 }
