@@ -4,6 +4,8 @@
 更新日付：2026/8/7
 ======================================*/
 
+import { showToast } from './utils/utils.js';
+
 const API_BASE_URL = 'https://prompt-san.vercel.app';
 
 let currentResult = "";
@@ -91,7 +93,7 @@ copyBtn.addEventListener('click', function() {
 
   doCopy().then(() => {
     copyBtn.textContent = 'コピー完了！';
-    toast.textContent = 'クリップボードにコピーしました': ${currentResult};
+    showToast(`抽出結果をコピーしました: ${currentResult}`);
     setTimeout(() => {
       copyBtn.textContent = 'クリップボードにコピー';
       toast.textContent = '';
