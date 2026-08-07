@@ -1,6 +1,5 @@
 const dataTableBody = document.getElementById('dataTableBody');
 const API_BASE_URL = 'https://prompt-san.vercel.app';
-// const API_BASE_URL = 'https://pick-style.vercel.app';
 
 // データを取得してテーブルを作る関数
 async function fetchAndRenderData() {
@@ -8,7 +7,7 @@ async function fetchAndRenderData() {
     // ローディング中っぽく見せる
     dataTableBody.innerHTML = '<tr><td colspan="2" style="text-align:center;">読み込み中...</td></tr>';
 
-    // APIを叩く
+    // APIを叩く（ここにしっかり response を定義！）
     const response = await fetch(`${API_BASE_URL}/api/get-all`);
     
     if (!response.ok) throw new Error('API通信エラー');
@@ -64,7 +63,7 @@ async function fetchAndRenderData() {
   }
 }
 
-// ★ここが抜けてた：画面の右下にトースト通知を出す関数
+// 画面の右下にトースト通知を出す関数
 function showToast(message, isError = false) {
   // すでに古いトーストがあれば消す
   const existingToast = document.getElementById('dynamic-toast');
