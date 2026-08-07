@@ -346,3 +346,9 @@ body.dark-theme .sidebar-header h2,
 body.dark-theme .sidebar-header .close-btn {
   color: #f0f0f0;
 }
+
+/* ダークモードでアクティブ（選択中）なメニューの背景と文字色 */
+body.dark-theme .sidebar .menu-list a.active {
+  background-color: #333333; /* 落ち着いた暗いグレーにするか、お好みで調整して */
+  color: #ffffff;            /* 文字は白くくっきり見せる */
+}
