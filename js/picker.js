@@ -93,7 +93,7 @@ copyBtn.addEventListener('click', function() {
 
   doCopy().then(() => {
     copyBtn.textContent = 'コピー完了！';
-    showToast(`抽出結果をコピーしました: ${currentResult}`);
+    showToast('抽出結果をコピーしました');
     setTimeout(() => {
       copyBtn.textContent = 'クリップボードにコピー';
       toast.textContent = '';
