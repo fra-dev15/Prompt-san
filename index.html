@@ -9,7 +9,9 @@
 </head>
 <body>
 
-  <!-- ハンバーガーボタン、サイドバー、オーバーレイ -->
+<!-- ==========================================
+  ハンバーガーボタン、サイドバー、オーバーレイ
+ ========================================== -->
   <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
     <span></span>
     <span></span>
@@ -35,7 +37,9 @@
   <!-- メインコンテンツ -->
   <main class="main-content">
     
-    <!-- PickStyle -->
+<!-- ==========================================
+   PickStyle
+ ========================================== -->
     <section id="generator-section" class="content-section">
       <div class="container">
         <h2>pickstyle</h2>
@@ -90,17 +94,43 @@
       </div>
     </section>
 
-    <!-- ★今後追加する新機能用のセクション（初期状態は hidden）★ -->
+<!-- ==========================================
+   抽出履歴
+ ========================================== -->
     <section id="history-section" class="content-section" hidden>
-      <h2>履歴</h2>
-      <p>ここに過去のプロンプトを表示します。</p>
+      <h2>抽出履歴</h2>
+      <p class="desc">直近50件までの抽出結果を表示します。</p>
+      
+      <div style="margin-bottom: 15px;">
+        <button id="clearHistoryBtn" style="padding: 6px 12px; background-color: #e74c3c; font-size: 14px;">履歴をクリア</button>
+      </div>
+
+      <div class="table-container">
+        <table id="historyTable">
+          <thead>
+            <tr>
+              <th style="width: 30%;">日時</th>
+              <th style="width: 70%;">抽出結果</th>
+            </tr>
+          </thead>
+          <tbody id="historyTableBody">
+            <!-- ここにJSで履歴を流し込む -->
+          </tbody>
+        </table>
+      </div>
     </section>
 
+<!-- ==========================================
+   テンプレート
+ ========================================== -->
     <section id="templates-section" class="content-section" hidden>
       <h2>テンプレート</h2>
       <p>ここにテンプレート一覧を表示します。</p>
     </section>
-
+    
+<!-- ==========================================
+   設定
+ ========================================== -->
     <section id="settings-section" class="content-section" hidden>
       <h2>設定</h2>
       <p>アプリケーションの動作環境を設定します。</p>
