@@ -1,6 +1,6 @@
 const dataTableBody = document.getElementById('dataTableBody');
-// const API_BASE_URL = 'https://prompt-san.vercel.app';
-const API_BASE_URL = 'https://pick-style.vercel.app';
+const API_BASE_URL = 'https://prompt-san.vercel.app';
+// const API_BASE_URL = 'https://pick-style.vercel.app';
 
 // データを取得してテーブルを作る関数
 async function fetchAndRenderData() {
