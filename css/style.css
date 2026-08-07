@@ -247,7 +247,7 @@ button:disabled {
 
 #dataTable {
   width: 100%;
-  /* table-layout: fixed; */
+  table-layout: fixed;
   border-collapse: collapse; /* 罫線 */
   background: #fff;
   border-radius: 8px;
