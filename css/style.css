@@ -1,3 +1,9 @@
+/*======================================
+ファイル名：style.css
+説明：Prompt-sanで利用するCSSファイル
+更新日付：2026/8/7
+======================================*/
+
 /* ==========================================
    ハンバーガーボタン
    ========================================== */
@@ -349,6 +355,58 @@ body.dark-theme #dataTable {
 }
 
 body.dark-theme #dataTable tr:hover {
+  background-color: #2a2a2a;
+}
+
+/* ==========================================
+   抽出履歴
+   ========================================== */
+#historyTable {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse; /* 枠線を綺麗に重ねる */
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* 枠線とセル内の余白 */
+#historyTable th, 
+#historyTable td {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #d1d5db; /* ライトモード時の明るい枠線 */
+  text-align: left;
+  word-break: break-all;
+}
+
+#historyTable th {
+  background-color: #3498db;
+  color: #ffffff; /* 見やすいように白字にする */
+  font-weight: bold;
+}
+
+/* --- ダークモード対応 --- */
+body.dark-theme #historyTable {
+  background-color: #1e1e1e;
+}
+
+/* ヘッダー背景を落ち着いた色にして、文字を白くくっきり見せる */
+body.dark-theme #historyTable th {
+  background-color: #2c3e50;
+  color: #ffffff; /* これで文字が見づらいのを解消 */
+  border-color: #444;
+}
+
+/* ダークモード時の枠線と文字色 */
+body.dark-theme #historyTable td {
+  border: 1px solid #333; /* ダークモード用の暗い枠線 */
+  color: #e0e0e0;
+}
+
+body.dark-theme #historyTable tr:hover {
   background-color: #2a2a2a;
 }
 
