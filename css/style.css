@@ -332,8 +332,8 @@ body.dark-theme .content-section h2 {
 }
 
 /* ハンバーガーメニューボタン（ダークモード） */
-body.dark-theme .hamburger-btn {
-  color: #f0f0f0;
+body.dark-theme .hamburger-btn span {
+  background-color: #fff;
 }
 
 /* サイドバー全体の文字色を白に */
