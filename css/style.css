@@ -305,7 +305,7 @@ button:disabled {
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse; /* 罫線 */
-  background: #000000;
+  background: #f4f7f6;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
