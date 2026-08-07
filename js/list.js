@@ -20,6 +20,26 @@ async function fetchAndRenderData() {
       // 取ってきたデータを1行ずつテーブルに追加していく
         result.data.forEach((item) => {
         const tr = document.createElement('tr');
+        // ★ここを追加：コピーするプロンプトの値をデータ属性に持たせる
+        const promptValue = item.prompt_name || '';
+        tr.setAttribute('data-prompt-value', promptValue);
+
+        // ★ここを追加：行をクリックしたときにクリップボードにコピーする
+        tr.addEventListener('click', function() {
+          const textToCopy = this.getAttribute('data-prompt-value');
+          if (!textToCopy) return;
+
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            console.log('コピーしました: ' + textToCopy);
+            alert(`プロンプト「${textToCopy}」をコピーしました！`);
+          }).catch(err => {
+            console.error('コピーに失敗しました: ', err);
+            alert('コピーに失敗しました。');
+          });
+        });
+
+        // ★ここを追加：マウスカーソルを指マークにして押しやすくする
+        tr.style.cursor = 'pointer';
         
         // 1列目: 要素名 (prompt_name)
         const tdPromptName = document.createElement('td');
