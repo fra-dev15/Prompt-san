@@ -41,7 +41,7 @@ extractBtn.addEventListener('click', async function() {
 
     if (result.success && Array.isArray(result.data)) {
       // ① 取得した要素をカンマ区切りで結合
-      currentResult = result.data.join(',');
+      currentResult = result.data.join(',') + ',';
 
       // 画面に表示
       resultText.textContent = currentResult;
