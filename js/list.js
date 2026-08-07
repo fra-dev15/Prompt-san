@@ -7,7 +7,7 @@ async function fetchAndRenderData() {
     dataTableBody.innerHTML = '<tr><td colspan="2" style="text-align:center;">読み込み中...</td></tr>';
 
     // APIを叩く
-    const response = await fetch('https://pick-style.vercel.app/api/get-all'); // ★全件取得のURLならここを変更
+    const response = await fetch('/api/get-all');
     
     if (!response.ok) throw new Error('API通信エラー');
     
