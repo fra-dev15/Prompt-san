@@ -18,17 +18,19 @@ async function fetchAndRenderData() {
       dataTableBody.innerHTML = '';
       
       // 取ってきたデータを1行ずつテーブルに追加していく
-      result.data.forEach((item, index) => {
+        result.data.forEach((item) => {
         const tr = document.createElement('tr');
         
-        const tdId = document.createElement('td');
-        tdId.textContent = index + 1; // No (連番)
+        // 1列目: 要素名 (prompt_name)
+        const tdPromptName = document.createElement('td');
+        tdPromptName.textContent = item.prompt_name;
         
-        const tdName = document.createElement('td');
-        tdName.textContent = item; // 実際のデータ
+        // 2列目: 正式名称 (official_name)
+        const tdOfficialName = document.createElement('td');
+        tdOfficialName.textContent = item.official_name || '';
         
-        tr.appendChild(tdId);
-        tr.appendChild(tdName);
+        tr.appendChild(tdPromptName);
+        tr.appendChild(tdOfficialName);
         dataTableBody.appendChild(tr);
       });
     } else {
