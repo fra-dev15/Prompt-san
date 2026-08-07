@@ -263,7 +263,7 @@ button:disabled {
 
 /* ヘルパー・要望対応：ヘルパーの背景色を黄緑にする場合はここを変えてね */
 #dataTable th {
-  background-color: #2ecc71;
+  background-color: #a1e6a1;
   color: #fff;
   font-weight: bold;
 }
