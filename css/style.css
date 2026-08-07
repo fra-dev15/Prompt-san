@@ -158,6 +158,23 @@ body.dark-theme .sidebar .menu-list a:hover {
   display: none !important;
 }
 
+/* PickStyleの白いカードコンテナを暗い色にする */
+body.dark-theme .content-section .container {
+  background-color: #1e1e1e; /* サイドバーなどと同じ暗いグレーに設定 */
+  border-color: #333;      /* 枠線も暗くする */
+}
+
+/* カード内の見出しやテキストも白くする */
+body.dark-theme .content-section h2 {
+  color: #ffffff;
+}
+body.dark-theme .content-section .desc {
+  color: #b0b0b0; /* 少し薄めの白 */
+}
+body.dark-theme .content-section label {
+  color: #ffffff;
+}
+
 /* ==========================================
    ベースデザイン & PickStyle
    ========================================== */
