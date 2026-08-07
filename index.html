@@ -109,7 +109,33 @@
 </style>
 </head>
 <body>
+  <!-- 【2】ハンバーガーボタン、サイドバー、オーバーレイを <body> 直下の一番上に追加 -->
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="メニューを開く">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2>Prompt-san</h2>
+      <button class="close-btn" id="closeBtn">&times;</button>
+    </div>
+    <ul class="menu-list">
+      <li><a href="#" class="menu-item active" data-target="generator-section">📝 プロンプト作成</a></li>
+      <li><a href="#" class="menu-item" data-target="history-section">📜 履歴一覧</a></li>
+      <li><a href="#" class="menu-item" data-target="templates-section">📚 テンプレート</a></li>
+      <li><a href="#" class="menu-item" data-target="settings-section">⚙️ 設定</a></li>
+    </ul>
+  </nav>
+
+  <div class="overlay" id="overlay"></div>
+    <!-- 0807insert end -->
+  
+<main class="main-content">
+    
+    <!-- ★現在動いているメイン画面★ -->
+<section id="generator-section" class="content-section">
   <div class="container">
     <h2>pickstyle</h2>
     <p class="desc">データベースから指定した数の要素をランダムに抽出します</p>
@@ -224,6 +250,23 @@
       });
     });
   </script>
+</section>
+
+  <!-- ★今後追加する新機能用のセクション（初期状態は hidden）★ -->
+<section id="history-section" class="content-section" hidden>
+   <h2>履歴一覧</h2>
+   <p>ここに過去のプロンプトを表示します。</p>
+ </section>
+
+ <section id="templates-section" class="content-section" hidden>
+  <h2>テンプレート</h2>
+  <p>ここにテンプレート一覧を表示します。</p>
+    </section>
+
+ <section id="settings-section" class="content-section" hidden>
+   <h2>設定</h2>
+   <p>ここに設定項目を表示します。</p>
+ </section>
 
 </body>
 </html>
