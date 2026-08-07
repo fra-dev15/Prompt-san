@@ -4,6 +4,8 @@
 更新日付：2026/8/7
 ======================================*/
 
+import { showToast } from './utils/utils.js';
+
 function renderHistory() {
   const historyTableBody = document.getElementById('historyTableBody');
   if (!historyTableBody) return;
@@ -34,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (confirm('履歴をすべて削除しますか？')) {
         localStorage.removeItem('pickstyle_history');
         renderHistory();
+        showToast('履歴を削除しました');
       }
     });
   }
@@ -53,14 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(textToCopy).then(() => {
-          // 画面上に toast 要素があれば一時的に完了メッセージを表示
-          const toast = document.getElementById('toast');
-          if (toast) {
-            toast.textContent = '✓ 抽出結果をコピーしました';
-            setTimeout(() => {
-              toast.textContent = '';
-            }, 2000);
-          }
+            showToast(`抽出結果をコピーしました: ${textToCopy}`)
         });
       }
     });
