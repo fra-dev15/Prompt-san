@@ -1,11 +1,4 @@
 /* ==========================================
-   フォント指定
-   ========================================== */
-body {
-  font-family: "Meiryo", "メイリオ", sans-serif;
-}
-
-/* ==========================================
    ハンバーガーボタン
    ========================================== */
 .hamburger-btn {
@@ -36,7 +29,7 @@ body {
 .sidebar {
   position: fixed;
   top: 0;
-  left: -280px; /* 初期状態は画面外に隠す */
+  left: -280px;
   width: 280px;
   height: 100%;
   background-color: #ffffff;
@@ -48,7 +41,7 @@ body {
 }
 
 .sidebar.open {
-  left: 0; /* メニューが開いた時 */
+  left: 0;
 }
 
 .sidebar-header {
@@ -72,7 +65,6 @@ body {
   color: #666;
 }
 
-/* メニューリスト */
 .menu-list {
   list-style: none;
   padding: 0;
@@ -120,23 +112,24 @@ body {
    メインコンテンツ・セクション制御
    ========================================== */
 .main-content {
-  padding-top: 50px; /* ハンバーガーボタンと被らないように余白を設定 */
+  padding-top: 50px;
 }
 
-/* 非表示設定 */
 .content-section[hidden] {
   display: none !important;
 }
 
 /* ==========================================
-   PickStyle
+   ベースデザイン & PickStyle
    ========================================== */
-#countInput {
-  font-size: 16px;  /* 文字を大きくする */
-  padding: 4px 10px; /* 上下左右の余白を広げてボックスを大きくする */
-  border-radius: 4px; /* 角を少し丸くする（お好みで） */
-  border: 1px solid #ccc;
+body {
+  font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  text-align: center;
+  padding: 40px 20px;
 }
+
 .container {
   background: #ffffff;
   max-width: 500px;
@@ -145,15 +138,18 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
+
 h2 {
   margin-top: 0;
   color: #2c3e50;
 }
+
 .desc {
   color: #7f8c8d;
   font-size: 14px;
   margin-bottom: 20px;
 }
+
 .input-group {
   margin: 20px 0;
   display: flex;
@@ -161,19 +157,20 @@ h2 {
   align-items: center;
   gap: 10px;
 }
+
 .input-group label {
   font-weight: bold;
   color: #2c3e50;
   font-size: 16px;
 }
-.input-group input[type="number"] {
-  width: 60px;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+
+#countInput {
   font-size: 16px;
-  text-align: center;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
+
 button {
   background-color: #3498db;
   color: #fff;
@@ -185,13 +182,16 @@ button {
   transition: background 0.3s;
   font-weight: bold;
 }
+
 button:hover {
   background-color: #2980b9;
 }
+
 button:disabled {
   background-color: #bdc3c7;
   cursor: not-allowed;
 }
+
 .result-container {
   margin-top: 25px;
   display: flex;
@@ -199,6 +199,7 @@ button:disabled {
   align-items: center;
   gap: 12px;
 }
+
 .result-box {
   background: #e8f4f8;
   color: #2c3e50;
@@ -211,19 +212,23 @@ button:disabled {
   width: 90%;
   box-sizing: border-box;
 }
+
 .copy-btn {
   background-color: #2ecc71;
   font-size: 14px;
   padding: 8px 18px;
 }
+
 .copy-btn:hover {
   background-color: #27ae60;
 }
+
 .error-msg {
   color: #e74c3c;
   font-size: 14px;
   margin-top: 10px;
 }
+
 .toast {
   font-size: 13px;
   color: #27ae60;
@@ -232,12 +237,12 @@ button:disabled {
 }
 
 /* ==========================================
-   一覧
+   データ一覧
    ========================================== */
 .table-container {
   margin: 20px auto;
   max-width: 600px;
-  overflow-x: auto; /* スマホではみ出た時はスクロールさせる */
+  overflow-x: auto;
 }
 
 #dataTable {
@@ -250,24 +255,23 @@ button:disabled {
 }
 
 #dataTable th, #dataTable td {
-  padding: 6px 12px; /* 上下の余白を狭くする（元は12px 15px） */
-  font-size: 14px;   /* 文字サイズも少し小さくして情報量を増やす */
+  padding: 6px 12px;
+  font-size: 14px;
   border-bottom: 1px solid #eee;
   text-align: left;
 }
 
+/* ヘルパー・要望対応：ヘルパーの背景色を黄緑にする場合はここを変えてね */
 #dataTable th {
-  background-color: #90ee90;
-  color: #333;
+  background-color: #2ecc71;
+  color: #fff;
   font-weight: bold;
 }
 
-/* 最後の行の下線は消す */
 #dataTable tr:last-child td {
   border-bottom: none;
 }
 
-/* マウスを乗せたら色をちょっと変える */
 #dataTable tr:hover {
   background-color: #f9f9f9;
 }
