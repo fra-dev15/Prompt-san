@@ -120,3 +120,43 @@
 .content-section[hidden] {
   display: none !important;
 }
+
+/* ==========================================
+   一覧
+   ========================================== */
+.table-container {
+  margin: 20px auto;
+  max-width: 600px;
+  overflow-x: auto; /* スマホではみ出た時はスクロールさせる */
+}
+
+#dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+#dataTable th, #dataTable td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+#dataTable th {
+  background-color: #3498db;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* 最後の行の下線は消す */
+#dataTable tr:last-child td {
+  border-bottom: none;
+}
+
+/* マウスを乗せたら色をちょっと変える */
+#dataTable tr:hover {
+  background-color: #f9f9f9;
+}
