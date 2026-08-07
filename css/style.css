@@ -410,6 +410,21 @@ body.dark-theme #historyTable tr:hover {
   background-color: #2a2a2a;
 }
 
+/* 履歴テーブルの行をクリック可能に見せる */
+#historyTable tbody tr {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#historyTable tbody tr:hover {
+  background-color: #e8f4f8;
+}
+
+/* ダークモード時のホバー表示 */
+body.dark-theme #historyTable tbody tr:hover {
+  background-color: #2a3a4a;
+}
+
 /* ==========================================
    設定
    ========================================== */

@@ -1,4 +1,9 @@
-// const API_URL = 'https://pick-style.vercel.app/api/pickstyle';
+/*======================================
+ファイル名：picker.js
+説明：pickStyle用のスクリプト
+更新日付：2026/8/7
+======================================*/
+
 const API_BASE_URL = 'https://prompt-san.vercel.app';
 
 let currentResult = "";
@@ -50,7 +55,7 @@ extractBtn.addEventListener('click', async function() {
       toast.textContent = '';
       copyBtn.textContent = 'クリップボードにコピー';
 
-      // ★ここで履歴に保存する処理を呼び出す★
+      // 抽出結果保存処理を呼出
       savePickResult(result.data);
 
     } else {
