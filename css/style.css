@@ -123,6 +123,12 @@ body.dark-theme .sidebar .menu-list a.active svg {
   filter: invert(1);
 }
 
+/* ダークモードでメニュー項目にホバーした時の背景と文字色 */
+body.dark-theme .sidebar .menu-list a:hover {
+  background-color: #444444; /* 少し明るめのグレーにしてホバー中だと分かりやすく */
+  color: #ffffff;                /* 文字は白を維持 */
+}
+
 /* ==========================================
    背景オーバーレイ
    ========================================== */
