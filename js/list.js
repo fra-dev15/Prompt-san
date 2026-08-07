@@ -1,4 +1,4 @@
-import { showToast } from './utils.js';
+import { showToast } from './utils/utils.js';
 
 const dataTableBody = document.getElementById('dataTableBody');
 const API_BASE_URL = 'https://prompt-san.vercel.app';
