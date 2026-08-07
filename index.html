@@ -103,7 +103,20 @@
 
     <section id="settings-section" class="content-section" hidden>
       <h2>設定</h2>
-      <p>ここに設定項目を表示します。</p>
+      <p>アプリケーションの動作環境を設定します。</p>
+      
+      <div class="settings-group" style="margin-top: 20px;">
+        <label for="apiUrlInput" style="display: block; margin-bottom: 8px; font-weight: bold;">API Base URL:</label>
+        <input type="text" id="apiUrlInput" style="width: 100%; max-width: 400px; padding: 8px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 4px;">
+        <br>
+        <button id="saveSettingsBtn" style="padding: 8px 16px; background-color: #2ecc71; color: white; border: none; border-radius: 4px; cursor: pointer; margin-right: 10px;">設定を保存</button>
+      </div>
+
+      <!-- ★ダークモード切り替えエリアを追加★ -->
+      <div class="settings-group" style="margin-top: 30px;">
+        <label style="display: block; margin-bottom: 8px; font-weight: bold;">外観テーマ:</label>
+        <button id="themeToggleBtn" style="padding: 8px 16px; background-color: #34495e; color: white; border: none; border-radius: 4px; cursor: pointer;">ダークモードに切り替え</button>
+      </div>
     </section>
 
   </main>
