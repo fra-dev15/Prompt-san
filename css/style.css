@@ -331,6 +331,11 @@ body.dark-theme .content-section h2 {
   color: #e0e0e0;
 }
 
+/* ハンバーガーメニューボタン（ダークモード） */
+body.dark-theme .hamburger-btn {
+  color: #f0f0f0;
+}
+
 /* サイドバー全体の文字色を白に */
 body.dark-theme .sidebar {
   color: #f0f0f0;
@@ -351,4 +356,10 @@ body.dark-theme .sidebar-header .close-btn {
 body.dark-theme .sidebar .menu-list a.active {
   background-color: #333333; /* 落ち着いた暗いグレーにするか、お好みで調整して */
   color: #ffffff;            /* 文字は白くくっきり見せる */
+}
+
+/* もしメニューの中にアイコンや画像があって白飛びするなら、色を反転させるなどの調整も可能 */
+body.dark-theme .sidebar .menu-list a.active img,
+body.dark-theme .sidebar .menu-list a.active svg {
+  filter: invert(1);
 }
