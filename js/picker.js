@@ -1,4 +1,5 @@
-const API_URL = 'https://pick-style.vercel.app/api/pickstyle';
+// const API_URL = 'https://pick-style.vercel.app/api/pickstyle';
+const API_BASE_URL = 'https://prompt-san.vercel.app';
 
 let currentResult = "";
 
@@ -31,7 +32,8 @@ extractBtn.addEventListener('click', async function() {
 
   try {
     // Vercel APIへリクエストを送信
-    const response = await fetch(`${API_URL}?count=${count}`);
+    // const response = await fetch(`${API_URL}?count=${count}`);
+    const response = await fetch(`${API_BASE_URL}/api/pickstyle?count=${count}`);
     
     if (!response.ok) {
       throw new Error('APIからのデータ取得に失敗しました');
