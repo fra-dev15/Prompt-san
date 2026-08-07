@@ -3,7 +3,7 @@ const API_URL = 'https://pick-style.vercel.app/api/pickstyle';
 let currentResult = "";
 
 const extractBtn = document.getElementById('extractBtn');
-const extractCountInput = document.getElementById('extractCount');
+const extractCountInput = document.getElementById('countInput');
 const resultArea = document.getElementById('resultArea');
 const resultText = document.getElementById('resultText');
 const copyBtn = document.getElementById('copyBtn');
