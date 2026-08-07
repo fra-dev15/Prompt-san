@@ -15,8 +15,8 @@ export default async function handler(req, res) {
     // 提示してくれた通り、3つのカラムを取得するSQL
     const rows = await sql`
       SELECT
-          prompt_name,
-          official_name
+          official_name,
+          prompt_name
       FROM
           ms_artists
       ORDER BY
