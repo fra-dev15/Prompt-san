@@ -18,9 +18,10 @@ async function fetchAndRenderData() {
       dataTableBody.innerHTML = '';
       
       // 取ってきたデータを1行ずつテーブルに追加していく
-        result.data.forEach((item) => {
+      result.data.forEach((item) => {
         const tr = document.createElement('tr');
-        // ★ここを追加：コピーするプロンプトの値をデータ属性に持たせる
+        
+        // コピーするプロンプトの値をデータ属性に持たせる
         const promptValue = item.prompt_name || '';
         tr.setAttribute('data-prompt-value', promptValue);
 
@@ -46,7 +47,7 @@ async function fetchAndRenderData() {
         
         // 2列目: 正式名称 (official_name)
         const tdOfficialName = document.createElement('td');
-        tdOfficialName.textContent = item.prompt_name || '';
+        tdOfficialName.textContent = promptValue;
         
         tr.appendChild(tdPromptName);
         tr.appendChild(tdOfficialName);
@@ -59,6 +60,43 @@ async function fetchAndRenderData() {
     console.error('データ取得エラー:', error);
     dataTableBody.innerHTML = `<tr><td colspan="2" style="color:red; text-align:center;">エラー: ${error.message}</td></tr>`;
   }
+}
+
+// ★ここが抜けてた：画面の右下にトースト通知を出す関数
+function showToast(message, isError = false) {
+  // すでに古いトーストがあれば消す
+  const existingToast = document.getElementById('dynamic-toast');
+  if (existingToast) {
+    existingToast.remove();
+  }
+
+  // トースト用の要素を作成
+  const toast = document.createElement('div');
+  toast.id = 'dynamic-toast';
+  toast.textContent = message;
+  
+  // スタイルをコード内で直接指定
+  toast.style.position = 'fixed';
+  toast.style.bottom = '20px';
+  toast.style.right = '20px';
+  toast.style.backgroundColor = isError ? '#e74c3c' : '#2ecc71';
+  toast.style.color = '#fff';
+  toast.style.padding = '10px 20px';
+  toast.style.borderRadius = '6px';
+  toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+  toast.style.fontSize = '14px';
+  toast.style.zIndex = '9999';
+  toast.style.transition = 'opacity 0.3s ease';
+
+  document.body.appendChild(toast);
+
+  // 2秒後にフェードアウトさせて消す
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    setTimeout(() => {
+      toast.remove();
+    }, 300);
+  }, 2000);
 }
 
 // メニューの「データ一覧」がクリックされた時にだけデータを取得する
