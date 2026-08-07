@@ -379,12 +379,12 @@ body.dark-theme table td {
 /* 設定画面の見出し（h2）と説明文（p）を明るくする */
 body.dark-theme #settings-section h2,
 body.dark-theme #settings-section p {
-  color: #121212; /* 薄いグレーに設定 */
+  color: #e0e0e0; /* 薄いグレーに設定 */
 }
 
 /* 念のため、他のセクションの見出しも同様に修正 */
 body.dark-theme .content-section h2 {
-  color: #121212;
+  color: #e0e0e0;
 }
 
 
