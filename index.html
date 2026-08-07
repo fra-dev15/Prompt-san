@@ -137,7 +137,7 @@
   <!-- メインコンテンツ -->
   <main class="main-content">
     
-    <!-- ★現在動いているメイン画面★ -->
+    <!-- PickStyle -->
     <section id="generator-section" class="content-section">
       <div class="container">
         <h2>pickstyle</h2>
@@ -145,8 +145,19 @@
         
         <!-- 抽出数の入力欄 -->
         <div class="input-group">
-          <label for="extractCount">抽出する数 (1〜10): </label>
-          <input type="number" id="extractCount" min="1" max="10" value="2">
+            <label for="countSelect">抽出する数：</label>
+            <select id="countInput">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
         </div>
 
         <button id="extractBtn">ランダムに抽出</button>
