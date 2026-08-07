@@ -12,7 +12,6 @@ export default async function handler(req, res) {
   try {
     const sql = neon(process.env.DATABASE_URL);
 
-    // 提示してくれた通り、3つのカラムを取得するSQL
     const rows = await sql`
       SELECT
           official_name,
@@ -23,7 +22,7 @@ export default async function handler(req, res) {
           id ASC
     `;
 
-    // 今までは文字列の配列だったけど、オブジェクトの配列（そのまま全プロパティ）を返すようにする
+    //オブジェクトの配列（そのまま全プロパティ）を返すようにする
     return res.status(200).json({ success: true, data: rows });
   } catch (error) {
     console.error(error);
