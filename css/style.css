@@ -261,16 +261,16 @@ button:disabled {
   text-align: left;
 }
 
-/* 正式名称（1列目）の幅を広げる（例：65%） */
+/* 1列目（正式名称）を 65% に強制固定 */
 #dataTable th:nth-child(1), 
 #dataTable td:nth-child(1) {
-  width: 35%;
+  width: 30% !important;
 }
 
-/* プロンプト（2列目）の幅 */
+/* 2列目（プロンプト）を 35% に強制固定 */
 #dataTable th:nth-child(2), 
 #dataTable td:nth-child(2) {
-  width: 65%;
+  width: 70% !important;
 }
 
 #dataTable th {
