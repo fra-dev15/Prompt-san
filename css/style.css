@@ -23,6 +23,11 @@
   transition: all 0.3s ease;
 }
 
+/* ハンバーガーメニューボタン（ダークモード） */
+body.dark-theme .hamburger-btn span {
+  background-color: #fff;
+}
+
 /* ==========================================
    サイドバー（スライドメニュー）
    ========================================== */
@@ -88,11 +93,6 @@
 .menu-item.active {
   background-color: #f0f0f0;
   font-weight: bold;
-}
-
-/* ハンバーガーメニューボタン（ダークモード） */
-body.dark-theme .hamburger-btn span {
-  background-color: #fff;
 }
 
 /* サイドバー全体の文字色を白に */
@@ -282,7 +282,7 @@ button:disabled {
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse; /* 罫線 */
-  background: #fff;
+  background: #000000;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
