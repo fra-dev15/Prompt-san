@@ -1,8 +1,8 @@
-/*============================
+/*======================================
 ファイル名：history.js
 説明：抽出履歴画面表示用スクリプト
 更新日付：2026/8/7
-============================*/
+======================================*/
 
 function renderHistory() {
   const historyTableBody = document.getElementById('historyTableBody');
