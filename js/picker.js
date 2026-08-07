@@ -32,7 +32,6 @@ extractBtn.addEventListener('click', async function() {
 
   try {
     // Vercel APIへリクエストを送信
-    // const response = await fetch(`${API_URL}?count=${count}`);
     const response = await fetch(`${API_BASE_URL}/api/pickstyle?count=${count}`);
     
     if (!response.ok) {
@@ -50,6 +49,10 @@ extractBtn.addEventListener('click', async function() {
       resultArea.style.display = 'flex';
       toast.textContent = '';
       copyBtn.textContent = 'クリップボードにコピー';
+
+      // ★ここで履歴に保存する処理を呼び出す★
+      savePickResult(result.data);
+
     } else {
       throw new Error(result.error || 'データの抽出に失敗しました');
     }
@@ -90,3 +93,26 @@ copyBtn.addEventListener('click', function() {
     }, 2000);
   });
 });
+
+/*=================================
+抽出結果保存
+==================================*/
+function savePickResult(extractedItems) {
+  // localStorageから現在の履歴を取得（無ければ空配列）
+  const history = JSON.parse(localStorage.getItem('pickstyle_history') || '[]');
+
+  // 新しい履歴オブジェクト
+  const newEntry = {
+    timestamp: new Date().toLocaleString('ja-JP'),
+    result: Array.isArray(extractedItems) ? extractedItems.join(', ') : extractedItems
+  };
+
+  // 先頭に追加（最新が上にくるように）
+  history.unshift(newEntry);
+
+  // 直近50件までに制限
+  const updatedHistory = history.slice(0, 50);
+
+  // localStorageに保存
+  localStorage.setItem('pickstyle_history', JSON.stringify(updatedHistory));
+}
