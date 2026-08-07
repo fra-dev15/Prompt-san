@@ -1,4 +1,5 @@
 const dataTableBody = document.getElementById('dataTableBody');
+const API_BASE_URL = 'https://prompt-san.vercel.app';
 
 // データを取得してテーブルを作る関数
 async function fetchAndRenderData() {
@@ -7,7 +8,7 @@ async function fetchAndRenderData() {
     dataTableBody.innerHTML = '<tr><td colspan="2" style="text-align:center;">読み込み中...</td></tr>';
 
     // APIを叩く
-    const response = await fetch('/api/get-all');
+    const response = await fetch(`${API_BASE_URL}/api/get-all`);
     
     if (!response.ok) throw new Error('API通信エラー');
     
