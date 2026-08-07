@@ -1,25 +1,10 @@
 import { showToast } from './utils/utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const apiUrlInput = document.getElementById('apiUrlInput');
-  const saveSettingsBtn = document.getElementById('saveSettingsBtn');
+
   const themeToggleBtn = document.getElementById('themeToggleBtn');
 
-  if (!apiUrlInput || !saveSettingsBtn || !themeToggleBtn) return;
-
-  // --- API URL設定の処理 ---
-  const savedApiUrl = localStorage.getItem('custom_api_base_url') || 'https://prompt-san.vercel.app';
-  apiUrlInput.value = savedApiUrl;
-
-  saveSettingsBtn.addEventListener('click', () => {
-    const newUrl = apiUrlInput.value.trim();
-    if (!newUrl) {
-      showToast('URLを入力してください', true);
-      return;
-    }
-    localStorage.setItem('custom_api_base_url', newUrl);
-    showToast('設定を保存しました！');
-  });
+  if !themeToggleBtn return;
 
   // --- ダークモード設定の処理 ---
   const currentTheme = localStorage.getItem('theme');
