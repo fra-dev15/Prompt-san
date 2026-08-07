@@ -24,21 +24,20 @@ async function fetchAndRenderData() {
         const promptValue = item.prompt_name || '';
         tr.setAttribute('data-prompt-value', promptValue);
 
-        // ★ここを追加：行をクリックしたときにクリップボードにコピーする
+        // 行をクリックしたときの通知処理
         tr.addEventListener('click', function() {
           const textToCopy = this.getAttribute('data-prompt-value');
           if (!textToCopy) return;
 
           navigator.clipboard.writeText(textToCopy).then(() => {
-            console.log('コピーしました: ' + textToCopy);
-            alert(`プロンプト「${textToCopy}」をコピーしました！`);
+            // 「コピーしました」の控えめな通知を表示する関数を呼ぶ
+            showToast(`コピーしました: ${textToCopy}`);
           }).catch(err => {
             console.error('コピーに失敗しました: ', err);
-            alert('コピーに失敗しました。');
+            showToast('コピーに失敗しました', true);
           });
         });
 
-        // ★ここを追加：マウスカーソルを指マークにして押しやすくする
         tr.style.cursor = 'pointer';
         
         // 1列目: 要素名 (prompt_name)
