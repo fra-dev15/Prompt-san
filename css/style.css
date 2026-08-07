@@ -265,13 +265,13 @@ button:disabled {
 /* 1列目（正式名称）を 65% に強制固定 */
 #dataTable th:nth-child(1), 
 #dataTable td:nth-child(1) {
-  width: 50% !important;
+  width: 40% !important;
 }
 
 /* 2列目（プロンプト）を 35% に強制固定 */
 #dataTable th:nth-child(2), 
 #dataTable td:nth-child(2) {
-  width: 50% !important;
+  width: 60% !important;
 }
 
 #dataTable th {
