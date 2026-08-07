@@ -1,18 +1,17 @@
 import { showToast } from './utils/utils.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-
   const themeToggleBtn = document.getElementById('themeToggleBtn');
+  if (!themeToggleBtn) return;
 
-  if !themeToggleBtn return;
-
-  // --- ダークモード設定の処理 ---
+  // 保存されているテーマを適用
   const currentTheme = localStorage.getItem('theme');
   if (currentTheme === 'dark') {
     document.body.classList.add('dark-theme');
     themeToggleBtn.textContent = 'ライトモードに切り替え';
   }
 
+  // ボタンをクリックしたときの処理
   themeToggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-theme');
     
