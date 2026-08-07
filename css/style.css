@@ -247,7 +247,8 @@ button:disabled {
 
 #dataTable {
   width: 100%;
-  border-collapse: collapse; /* 罫線をきれいに重ねる */
+  table-layout: fixed;
+  border-collapse: collapse; /* 罫線 */
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
