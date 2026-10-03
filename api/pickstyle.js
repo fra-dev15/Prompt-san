@@ -7,14 +7,17 @@ export default async function handler(req, res) {
 
   // URLパラメータから抽出数 (count) を取得（デフォルトは2件）
   const count = parseInt(req.query.count || '2', 10);
-
+  // URLパラメータから指定範囲 (pick_range) を取得（デフォルトは1）
+  const pick_range = parseInt(req.query.pick_range || '1', 3);
+  
   try {
     // 環境変数からNeonの接続文字列を取得して接続
     const sql = neon(process.env.DATABASE_URL);
 
     // DBからランダムに指定件数 (count) を抽出
     const rows = await sql`
-      SELECT prompt_name FROM ms_artists 
+      SELECT prompt_name FROM ms_artists
+      WHERE priority <= ${select_range}
       ORDER BY RANDOM() 
       LIMIT ${count}
     `;
