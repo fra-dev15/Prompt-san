@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     // DBからランダムに指定件数 (count) を抽出
     const rows = await sql`
       SELECT prompt_name FROM ms_artists
-      WHERE priority <= ${select_range}
+      WHERE priority <= ${pick_range}
       ORDER BY RANDOM() 
       LIMIT ${count}
     `;

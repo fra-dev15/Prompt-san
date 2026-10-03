@@ -27,12 +27,12 @@ if (extractCountInput) {
   });
 }
 
-// 指定範囲：入力値の制限 (1〜3) を制御
+// 指定範囲：入力値の制限 (0〜3) を制御
 if (pickRangeInput) {
   pickRangeInput.addEventListener('input', function() {
     let val = parseInt(this.value, 3);
     if (val > 3) this.value = 3;
-    if (val < 1) this.value = 1;
+    if (val < 0) this.value = 0;
   });
 }
 
