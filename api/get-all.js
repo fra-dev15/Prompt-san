@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       FROM
           ms_artists
       ORDER BY
-          id ASC
+          priority asc,id asc
     `;
 
     //オブジェクトの配列（そのまま全プロパティ）を返すようにする
