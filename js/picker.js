@@ -17,6 +17,7 @@ const resultArea = document.getElementById('resultArea');
 const resultText = document.getElementById('resultText');
 const copyBtn = document.getElementById('copyBtn');
 const errorArea = document.getElementById('errorArea');
+const format = document.getElementById('format');
 
 // 抽出数：入力値の制限 (1〜10) を制御
 if (extractCountInput) {
@@ -68,8 +69,24 @@ if (extractBtn) {
       const result = await response.json();
 
       if (result.success && Array.isArray(result.data)) {
+
+        //20261010_フォーマット別に分岐
+        let formatVal = format ? format.value : '2';
+        const formattedItems = result.data.map(name => {
+          switch (formatVal) {
+            case '1':
+              return `${name}`;
+            case '2':
+              return `artist:${name}`;
+            case '3':
+              return `(artist:${name})`;
+            default:
+              return `artist:${name}`;
+          }
+        });
+
         // 取得した要素をカンマ区切りで結合
-        currentResult = result.data.join(',') + ',';
+        currentResult = formattedItems.join(',') + ',';
 
         // 画面に表示
         if (resultText) resultText.textContent = currentResult;
