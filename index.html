@@ -46,32 +46,30 @@
         <p class="desc">データベースから指定した数の要素をランダムに抽出します</p>
         
         <!-- 抽出数の入力欄 -->
-        <div class="input-row">
-          <div class="input-group">
-              <label for="countSelect">抽出する数：</label>
-              <select id="countInput">
-                <option value="1">1</option>
-                <option value="2" selected>2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
-          </div>
-
-          <div class="input-group">
-              <label for="pick_range">指定範囲：</label>
-              <select id="pick_range">
-              <option value="0">0</option>
-              <option value="1" selected>1</option>
-              <option value="2">2</option>
+        <div class="input-group">
+            <label for="countSelect">抽出する数：</label>
+            <select id="countInput">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
               <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
             </select>
-          </div>
+        </div>
+
+        <div class="input-group">
+            <label for="pick_range">指定範囲：</label>
+            <select id="pick_range">
+            <option value="0">0</option>
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
         </div>
 
         <button id="extractBtn">ランダムに抽出</button>

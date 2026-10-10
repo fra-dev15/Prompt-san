@@ -240,20 +240,6 @@ h2 {
   border: 1px solid #ccc;
 }
 
-/* 抽出条件の入力欄を横並びにする */
-.input-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px; /* 項目同士の隙間 */
-  margin: 20px 0;
-}
-
-/* 横並びにした中の input-group の上下マージンをリセット */
-.input-row .input-group {
-  margin: 0;
-}
-
 button {
   background-color: #3498db;
   color: #fff;
