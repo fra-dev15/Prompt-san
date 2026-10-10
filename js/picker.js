@@ -44,11 +44,13 @@ if (extractBtn) {
     
     if (isNaN(count) || count < 1)
       count = 1;
-    if (count > 10) count = 10;
+    if (count > 10) 
+      count = 10;
 
     if (isNaN(pick_range) || pick_range < 0)
       pick_range = 0;
-    if (pick_range > 3) pick_range = 3;
+    if (pick_range > 3)
+      pick_range = 3;
 
     // UIの初期化
     if (errorArea) errorArea.textContent = '';
@@ -57,7 +59,7 @@ if (extractBtn) {
 
     try {
       // Vercel APIへリクエストを送信
-      const response = await fetch(`${API_BASE_URL}/api/pickstyle?count=${count}&range=${pick_range}`);
+      const response = await fetch(`${API_BASE_URL}/api/pickstyle?count=${count}&pick_range=${pick_range}`);
       
       if (!response.ok) {
         throw new Error('APIからのデータ取得に失敗しました');
