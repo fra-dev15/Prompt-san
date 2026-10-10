@@ -72,6 +72,15 @@
           </select>
         </div>
 
+        <div class="input-group">
+            <label for="format">形式：</label>
+            <select id="format">
+            <option value="[名前]">0</option>
+            <option value="artist:[名前]" selected>1</option>
+            <option value="(artist:[名前])">2</option>
+          </select>
+        </div>
+
         <button id="extractBtn">ランダムに抽出</button>
         
         <div id="errorArea" class="error-msg"></div>
