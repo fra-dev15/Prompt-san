@@ -79,7 +79,7 @@ if (extractBtn) {
             case '2':
               return `artist:${name}`;
             case '3':
-              return `(artist:${name})`;
+              return `(artist:${name}:1.0)`;
             default:
               return `artist:${name}`;
           }
